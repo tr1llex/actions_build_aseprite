@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@master
-    - name: Get Download Links
+    - name: Get Download Vo
       run: |
         echo "::set-output name=action_ase::$(iwr https://api.github.com/repos/aseprite/aseprite/releases/latest | Select -ExpandProperty Content | jq -r '.assets[].browser_download_url')"
         echo "::set-output name=action_skia::$(iwr https://api.github.com/repos/aseprite/skia/releases/latest | Select -ExpandProperty Content | jq -r '.assets[].browser_download_url' | findstr Windows | findstr 64)"
